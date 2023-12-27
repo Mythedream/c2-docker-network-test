@@ -24,6 +24,11 @@ class DockerNetworkManager:
         with open(json_config_path, "r") as json_file:
             data = json.load(json_file)
 
+        existing_network = self.get_network(data["network_name"])
+        if existing_network:
+            print(f"Network {data['network_name']} already exists. Removing it.")
+            existing_network.remove_network()
+
         network = DockerNetwork(
             network_name=data["network_name"],
             driver=data.get("driver", "bridge"),

@@ -23,6 +23,12 @@ class DockerContainerManager:
         with open(json_config_path, "r") as json_file:
             data = json.load(json_file)
 
+        existing_container = self.get_container(data["container_name"])
+        if existing_container:
+            print(f"Container {data['container_name']} already exists, Removing it.")
+            existing_container.stop_container()
+            existing_container.remove_container()
+
         container = DockerContainer(
             image_name=data["image_name"],
             container_name=data["container_name"],
