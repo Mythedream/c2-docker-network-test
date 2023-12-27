@@ -1,0 +1,9 @@
+{
+    "network_name": "c2_network",
+    "driver": "bridge",
+    "options": {
+        "com.docker.network.bridge.name": "my_bridge",
+        "com.docker.network.bridge.enable_icc": "true",
+        "com.docker.network.bridge.enable_ip_masquerade": "true"
+    }
+}
