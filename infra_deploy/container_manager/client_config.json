@@ -1,6 +1,0 @@
-{
-    "image_name": "c2-client-app",
-    "build_context": "./client",
-    "container_name": "c2-client",
-    "networks": ["c2-network"]
-}

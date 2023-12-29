@@ -1,7 +1,0 @@
-{
-    "image_name": "c2-server-app",
-    "build_context": "./server",
-    "container_name": "c2-server",
-    "ports": {"9999/tcp": 9999},
-    "networks": ["c2_network"]
-}
